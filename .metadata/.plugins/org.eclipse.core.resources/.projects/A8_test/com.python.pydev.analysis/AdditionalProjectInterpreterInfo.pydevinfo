@@ -1,0 +1,46 @@
+-- VERSION_5
+-- START DISKCACHE_2
+D:\workspace\.metadata\.plugins\org.eclipse.core.resources\.projects\A8_test\com.python.pydev.analysis\v2_indexcache
+A8_regress.__init__|1534907652326208000|D:\workspace\A8_test\A8_regress\__init__.py
+A8_regress.Update|1535701953810225000|D:\workspace\A8_test\A8_regress\Update.py
+A8_regress.Login|1535356404243176000|D:\workspace\A8_test\A8_regress\Login.py
+A8_regress.Main|1535702129267412000|D:\workspace\A8_test\A8_regress\Main.py
+A8_regress.Open|1535700730121852000|D:\workspace\A8_test\A8_regress\Open.py
+-- END DISKCACHE
+-- START DICTIONARY
+13
+1=D:\workspace\A8_test\A8_regress\Login.py
+8=A8_regress.Update
+2=A8_regress.Login
+13=update
+6=A8_regress.Main
+10=login.setUpClass
+12=login
+5=D:\workspace\A8_test\A8_regress\Main.py
+7=D:\workspace\A8_test\A8_regress\Update.py
+3=D:\workspace\A8_test\A8_regress\Open.py
+11=update.setUpClass
+4=A8_regress.Open
+9=open
+-- END DICTIONARY
+-- START TREE 1
+7
+f|0|
+htm|0|
+log|1|login!1^7#7*17@
+ope|1|open!3^7#7*33@
+run|0|
+tes|1|test_suite!5^24#5*51@
+upd|1|update!7^12#7*65@
+-- END TREE
+-- START TREE 2
+8
+com|1|community!9&3^28#9*34@
+dri|2|driver!10&1^19#9*19@driver!11&7^23#9*67@
+mat|1|match!9&3^33#9*34@
+my|1|my!9&3^23#9*34@
+qui|1|quit!12&1^29#9*18@
+set|2|setUpClass!13&7^14#9*66@setUpClass!12&1^10#9*18@
+tea|2|tearDownClass!13&7^28#9*66@tearDownClass!12&1^24#9*18@
+tes|4|test_003_wb!12&1^88#9*18@test_001_wx!12&1^39#9*18@test_001_version!13&7^33#9*66@test_002_qq!12&1^62#9*18@
+-- END TREE
