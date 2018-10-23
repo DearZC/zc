@@ -25,7 +25,7 @@ class home(unittest.TestCase):
         self.driver.get_screenshot_as_file('E:/XiHeng/test_001_maintenance.png')
         element = '.sidebar-cell-popup.sidebar-cell-popup-qr'
         a = findElement.isElementExist(self,element)
-        self.assertTrue(a, True)
+        self.assertTrue(a, '正确')
 
 if __name__ == '__main__' :
     unittest.main()

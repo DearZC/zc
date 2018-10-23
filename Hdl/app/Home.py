@@ -6,16 +6,18 @@ from appium import webdriver
 class home(unittest.TestCase):
     @classmethod
     def setUpClass(self):
-        A8_Sport = {}
-        A8_Sport['platformName'] = 'Android'
-        A8_Sport['deviceName'] = ''
-        A8_Sport['resetKeyboard'] = True
-        A8_Sport['appPackage'] = ''
-        A8_Sport['appActivity'] = ''
-        A8_Sport['noReset'] = True
-        A8_Sport['unicodeKeyboard'] = True   #  默认输入法
-        A8_Sport['automationName'] = 'Uiautomator2'
-        self.driver = webdriver.Remote('http://localhost:4723/wd/hub', A8_Sport)
+        ROLEX = {}
+        ROLEX['platformName'] = 'Android'
+        ROLEX['deviceName'] = ''
+        ROLEX['resetKeyboard'] = True
+        ROLEX['appPackage'] = 'com.hengdeliltd.wristwatch.household.activity'
+        # adb logcat - b events - c   清除ecents日志
+        # adb logcat - b events - s am_create_activity: *查看启动日志
+        ROLEX['appActivity'] = ''
+        ROLEX['noReset'] = True
+        ROLEX['unicodeKeyboard'] = True   #  默认输入法
+        ROLEX['automationName'] = 'Uiautomator2'
+        self.driver = webdriver.Remote('http://localhost:4723/wd/hub', ROLEX)
         time.sleep(3)
         print('打开App')
 
