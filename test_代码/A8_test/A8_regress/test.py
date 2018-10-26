@@ -27,8 +27,8 @@ class jiekou(unittest.TestCase):
         code = json.loads(d.text)
         print(d.status_code)
         print(code)
-        self.assertEqual(d.get_status_code(), 200)
-        self.assertEqual(d.get_code(), 1)
+        self.assertEqual(d.status_code, 200)
+        self.assertEqual(d.get_code, 1)
 
 if __name__ == '__main__' :
     unittest.main()
