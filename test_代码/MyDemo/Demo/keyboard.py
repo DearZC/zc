@@ -11,3 +11,4 @@ driver.execute_script(js)
 handles = driver.window_handles
 driver.switch_to_window(handles[1])
 driver.find_element_by_id('kw').send_keys(Keys.CONTROL,'v')
+driver.save_screenshot()
