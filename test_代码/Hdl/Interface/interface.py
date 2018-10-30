@@ -14,9 +14,12 @@ class MyTestCase(unittest.TestCase):
 
     def test_001_test(self):
         a = requests.get(url = 'http://192.168.1.216:1000/api/FriendshipLink')
-        code = json.loads(a.text)
-        print(code)
         self.assertEqual(a.status_code, 200)
+        b = a.json()
+        print(b)
+        assert b[0]["Name"] == '手表维修中心'
+        assert b[1]["Name"] == '北京手表维修中心'
+
 
 
 
