@@ -1,8 +1,8 @@
 from appium import webdriver
 import unittest
 import time
-from A8_regress.Open import open
-from A8_regress import Toast
+from test_代码.A8_test.A8_regress.Open import open
+from test_代码.A8_test.A8_regress import Toast
 
 
 class login(unittest.TestCase):
@@ -126,4 +126,4 @@ class login(unittest.TestCase):
 if __name__ == '__main__' :
     unittest.main()
 
-        
+
