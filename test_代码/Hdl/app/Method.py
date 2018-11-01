@@ -47,14 +47,14 @@ class toast():
         self.driver.swip(size[0] * 0.25.size[1] * 0.5, size[0] * 0.75, size[1] * 0.5, t)
 
         # 点击首页
-    def home(self):
+    def clickHome(self):
         self.driver.find_element_by_xpath("//*[text()='首页']").click()
 
         # 点击社区
-    def community(self):
+    def clickCommunity(self):
         self.driver.find_element_by_xpath("//*[text()='社区']").click()
 
         # 点击我的
-    def my(self):
+    def clickMy(self):
         self.driver.find_element_by_xpath("//*[text()='我的']").click()
 
