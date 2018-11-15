@@ -1,7 +1,8 @@
 import unittest
 import time
+from test_代码.HDL.app.Method import toast
+from selenium import webdriver
 from appium import webdriver
-from app.Method import toast
 
 
 class home(unittest.TestCase):
@@ -16,7 +17,7 @@ class home(unittest.TestCase):
         # adb logcat - b events - s am_create_activity: *查看启动日志
         ROLEX['appActivity'] = '.LauncherActivity'
         ROLEX['noReset'] = True
-        ROLEX['unicodeKeyboard'] = True   #  默认输入法
+        # ROLEX['unicodeKeyboard'] = True   #  默认输入法
         ROLEX['automationName'] = 'Uiautomator2'
         self.driver = webdriver.Remote('http://localhost:4723/wd/hub', ROLEX)
         time.sleep(3)
@@ -66,12 +67,21 @@ class home(unittest.TestCase):
     def test_004_order(self):
         self.driver.find_element_by_android_uiautomator("text(\"我的\")").click()
         self.driver.find_element_by_id('com.hengdeliltd.wristwatch.household.activity:id/lltvPersonal').click()
-        toast.bespeak(self)
-        a = self.driver.find_element_by_android_uiautomator("text(\"尊敬的用户，恭喜您已预约成功\")").text()
-        # self.assertEqual(a, '尊敬的用户，恭喜您已预约成功', 'message = 没有预约成功')
-        print(a)
-
-
+        self.driver.find_element_by_android_uiautomator("text(\"腕表服务中心\")").click()
+        time.sleep(3)
+        element = "//*[@resource-id = 'com.android.packageinstaller:id/permission_message']"
+        if element is True:
+            print('存在权限弹窗，点击允许权限后，再进行预约操作')
+            self.driver.find_element_by_android_uiautomator("text(\"始终允许\")").click()
+            time.sleep(2)
+            toast.bespeak(self)
+        else:
+            print('没有权限弹窗，等待1S后进行预约操作')
+            time.sleep(1)
+            toast.test_bespeak(self)
+        text = self.driver.find_element_by_android_uiautomator("text(\"尊敬的用户，恭喜您已预约成功\")").text()
+        self.assertEqual(text, '尊敬的用户，恭喜您已预约成功', 'message = 没有预约成功')
+        print(text)
 
 if __name__ == '__main__':
     unittest.main()
