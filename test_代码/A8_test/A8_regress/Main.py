@@ -1,8 +1,8 @@
 # coding=utf-8
 
 
-from A8_regress.Login import login
-from A8_regress.Update import version
+from A8_test.A8_regress.Login import login
+
 import unittest
 import HTMLTestRunner
 
@@ -21,13 +21,13 @@ if __name__ == '__main__':
 #     runner = HTMLTestRunner.HTMLTestRunner(f, title='unittest用例标题', description='这是用例描述')
 #     runner.run(test_suite)       
      
-    test_suite = unittest.TestSuite()
-    test_suite.addTests(unittest.makeSuite(login))
-#     test_suite.addTest(version('test_001_version'))
-    test_run = unittest.TextTestRunner()
-    test_run.run(test_suite)
-#     suite = unittest.TestSuite()
-#     suite.addTest(login('test_005'))
+#     test_suite = unittest.TestSuite()
+#     test_suite.addTests(unittest.makeSuite(login))
+# #     test_suite.addTest(version('test_001_version'))
+#     test_run = unittest.TextTestRunner()
+#     test_run.run(test_suite)
+    suite = unittest.TestSuite()
+    suite.addTest(login('test_005'))
     
     run = unittest.TextTestRunner()
-    run.run(test_suite)
+    run.run(suite)
