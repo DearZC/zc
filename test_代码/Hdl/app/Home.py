@@ -37,6 +37,7 @@ class home(unittest.TestCase):
         if i is True:
             print('找到元素，当前未登陆，进行登陆')
             toast.login(self)
+            time.sleep(2)
         else:
             print('没有找到元素，当前已登陆，不执行操作')
             pass
@@ -70,7 +71,8 @@ class home(unittest.TestCase):
         self.driver.find_element_by_android_uiautomator("text(\"腕表服务中心\")").click()
         time.sleep(3)
         element = "//*[@resource-id = 'com.android.packageinstaller:id/permission_message']"
-        if element is True:
+        i = toast.is_element_exist(self, element)
+        if i is True:
             print('存在权限弹窗，点击允许权限后，再进行预约操作')
             self.driver.find_element_by_android_uiautomator("text(\"始终允许\")").click()
             time.sleep(2)
@@ -78,7 +80,7 @@ class home(unittest.TestCase):
         else:
             print('没有权限弹窗，等待1S后进行预约操作')
             time.sleep(1)
-            toast.test_bespeak(self)
+            toast.bespeak(self)
         text = self.driver.find_element_by_android_uiautomator("text(\"尊敬的用户，恭喜您已预约成功\")").text()
         self.assertEqual(text, '尊敬的用户，恭喜您已预约成功', 'message = 没有预约成功')
         print(text)

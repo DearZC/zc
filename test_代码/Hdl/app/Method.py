@@ -69,7 +69,7 @@ class toast():
 
     def login(self):
         self.driver.find_element_by_android_uiautomator("text(\"请输入手机号码\")").send_keys('18672026447')
-        self.driver.find_element_by_android_uiautomator("text(\"请输入密码\")").send_keys('123456')
+        self.driver.find_element_by_android_uiautomator("text(\"请输入密码\")").send_keys('123456789')
         self.driver.find_element_by_id('com.hengdeliltd.wristwatch.household.activity:id/btnLogin').click()
 
         # 发布视频动态
@@ -111,7 +111,7 @@ class toast():
 
         # 维修预约
 
-    def test_bespeak(self):
+    def bespeak(self):
         # 选择城市--北京
         self.driver.find_element_by_id('com.hengdeliltd.wristwatch.household.activity:id/tvLocationCity').click()
         self.driver.find_element_by_android_uiautomator("text(\"确定\")").click()
