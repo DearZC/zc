@@ -32,7 +32,7 @@ class home(unittest.TestCase):
         self.driver.find_element_by_android_uiautomator("text(\"我的\")").click()
         time.sleep(2)
         element = "//*[@resource-id = 'com.hengdeliltd.wristwatch.household.activity:id/btnLogin']"
-        i = toast.is_element_exist(self,element)
+        i = toast.is_element_exist(self, element)
         print(i)
         if i is True:
             print('找到元素，当前未登陆，进行登陆')
@@ -46,7 +46,10 @@ class home(unittest.TestCase):
     def test_002_releaseVideo(self):
         self.driver.find_element_by_android_uiautomator("text(\"社区\")").click()
         time.sleep(0.5)
-        self.driver.find_element_by_id('com.hengdeliltd.wristwatch.household.activity:id/ivReleasePhotograph').click()
+        self.driver.find_element_by_id('com.hengdeliltd.wristwatch.household.activity:id'
+                                       '/ivReleasePhotograph').click()
+        # com.huawei.camera:id/shutter_button
+        # com.huawei.camera:id/shutter_button
         toast.releaseVideo(self)
         a = toast.is_toast_exist(self.driver, '发布成功')
         if a is True:
@@ -57,7 +60,8 @@ class home(unittest.TestCase):
     def test_003_releasePhoto(self):
         self.driver.find_element_by_android_uiautomator("text(\"社区\")").click()
         time.sleep(0.5)
-        self.driver.find_element_by_id('com.hengdeliltd.wristwatch.household.activity:id/ivReleasePhotograph').click()
+        self.driver.find_element_by_id('com.hengdeliltd.wristwatch.household.activity:id'
+                                       '/ivReleasePhotograph').click()
         toast.releasePhoto(self)
         a = toast.is_toast_exist(self.driver, '发布成功')
         if a is True:
@@ -67,7 +71,8 @@ class home(unittest.TestCase):
 
     def test_004_order(self):
         self.driver.find_element_by_android_uiautomator("text(\"我的\")").click()
-        self.driver.find_element_by_id('com.hengdeliltd.wristwatch.household.activity:id/lltvPersonal').click()
+        self.driver.find_element_by_id('com.hengdeliltd.wristwatch.household.activity:id'
+                                       '/lltvPersonal').click()
         self.driver.find_element_by_android_uiautomator("text(\"腕表服务中心\")").click()
         time.sleep(3)
         element = "//*[@resource-id = 'com.android.packageinstaller:id/permission_message']"
@@ -84,6 +89,7 @@ class home(unittest.TestCase):
         text = self.driver.find_element_by_android_uiautomator("text(\"尊敬的用户，恭喜您已预约成功\")").text()
         self.assertEqual(text, '尊敬的用户，恭喜您已预约成功', 'message = 没有预约成功')
         print(text)
+
 
 if __name__ == '__main__':
     unittest.main()

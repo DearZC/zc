@@ -23,8 +23,7 @@ class toast():
         except:
             return False
 
-        # 元素是否存在
-
+    # 元素是否存在
     def is_element_exist(self, element):
         try:
             self.driver.find_element_by_xpath(element)
@@ -34,48 +33,41 @@ class toast():
             print('元素不存在')
             return False
 
-        # 获取屏幕大小
-
+    # 获取屏幕大小
     def get_size(self):
         x = self.driver.get_window_size()['width']
         y = self.driver.get_window_size()['height']
         return (x, y)
 
-        # 向上滑动
-
+    # 向上滑动
     def swipeUp(self, t):
         size = toast.get_size(self)
         self.driver.swipe(size[0] * 0.5, size[1] * 0.75, size[0] * 0.5, size[1] * 0.25, t)
 
-        # 向下滑动
-
+    # 向下滑动
     def swipeDown(self, t):
         size = toast.get_size(self)
         self.driver.swipe(size[0] * 0.5, size[1] * 0.25, size[0] * 0.5, size[1] * 0.75, t)
 
-        # 向左滑动
-
+    # 向左滑动
     def swipeLeft(self, t):
         size = toast.get_size(self)
         self.driver.swipe(size[0] * 0.75.size[1] * 0.5, size[0] * 0.25, size[1] * 0.5, t)
 
-        # 向右滑动
-
+    # 向右滑动
     def swipeRight(self, t):
         size = toast.get_size(self)
         self.driver.swipe(size[0] * 0.25.size[1] * 0.5, size[0] * 0.75, size[1] * 0.5, t)
 
-        # 登陆
-
+    # 登陆
     def login(self):
         self.driver.find_element_by_android_uiautomator("text(\"请输入手机号码\")").send_keys('18672026447')
         self.driver.find_element_by_android_uiautomator("text(\"请输入密码\")").send_keys('123456789')
         self.driver.find_element_by_id('com.hengdeliltd.wristwatch.household.activity:id/btnLogin').click()
 
-        # 发布视频动态
-
+    # 发布视频动态
     def releaseVideo(self):
-        text = '这个是发布的内容'
+        text = '这是一个视频，用自动化进行发布'
         self.driver.find_element_by_android_uiautomator("text(\"分享您的那点新鲜事儿...\")").send_keys(text)
         time.sleep(1)
         self.driver.find_element_by_id('com.hengdeliltd.wristwatch.household.activity:id/fiv').click()
@@ -91,10 +83,9 @@ class toast():
         self.driver.find_element_by_android_uiautomator("text(\"发布\")").click()
         time.sleep(1)
 
-        # 发布图片动态
-
+    # 发布图片动态
     def releasePhoto(self):
-        text = '这个是发布的内容'
+        text = '这是一张图片，用自动化进行发布'
         self.driver.find_element_by_android_uiautomator("text(\"分享您的那点新鲜事儿...\")").send_keys(text)
         time.sleep(1)
         self.driver.find_element_by_id('com.hengdeliltd.wristwatch.household.activity:id/fiv').click()
@@ -109,8 +100,7 @@ class toast():
         self.driver.find_element_by_android_uiautomator("text(\"发布\")").click()
         time.sleep(1)
 
-        # 维修预约
-
+    # 维修预约
     def bespeak(self):
         # 选择城市--北京
         self.driver.find_element_by_id('com.hengdeliltd.wristwatch.household.activity:id/tvLocationCity').click()

@@ -44,7 +44,7 @@ class Crawler():
             request.urlretrieve(img.attrs['src'], path + r'\%s.jpg' % x)
             x += 1
 
-url = 'http://www.duwenzhang.com/wenzhang/qinqingwenzhang/20180706/390695.html'
+url = 'https://s76k.chinaemail.cn/webmail7.5/webmail.php?r=site/index'
 path = 'D:/pageCode.txt'
 test = Crawler()
 test.crawlerAll(url, path)
