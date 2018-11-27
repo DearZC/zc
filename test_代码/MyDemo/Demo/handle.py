@@ -9,9 +9,9 @@ js = 'window.open("http://www.sogou.com/");'
 driver.execute_script(js)
 handles = driver.window_handles
 print(handles)
-driver.switch_to_window(handles[0])
+driver.switch_to.window(handles[0])
 print(driver.current_window_handle)
-driver.switch_to_window(handles[1])
+driver.switch_to.window(handles[1])
 print(driver.current_window_handle)
-driver.switch_to_window(handles[2])
+driver.switch_to.window(handles[2])
 print(driver.current_window_handle)

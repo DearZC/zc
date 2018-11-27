@@ -1,7 +1,7 @@
 import unittest
 import time
 from selenium import webdriver
-from Hdl.backstage import Method
+from test_代码.HDL.backstage import Method
 
 class home(unittest.TestCase):
     @classmethod

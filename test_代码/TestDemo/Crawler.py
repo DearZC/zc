@@ -24,9 +24,9 @@ class Crawler():
         page_info = request.urlopen(page).read()
         b = BeautifulSoup(page_info, 'html.parser')
         pageFile = open(path, 'a')
-        for j in b.find_all(label, attribute):
-            print(j.text)
-            pageFile.write(j.text)
+        for i in b.find_all(label, attribute):
+            print(i.text)
+            pageFile.write(i.text)
         pageFile.close()
 
     # 抓取图片，传入抓取的URL，图片保存路径（路径必须已存在）
