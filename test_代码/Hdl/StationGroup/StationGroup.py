@@ -18,7 +18,6 @@ class StationGroup(unittest.TestCase):
         str = input('请输入搜索内容：')
         self.driver.find_element_by_id('kw').send_keys(str)
         self.driver.find_element_by_id('su').click()
-
         self.driver.back()
 
         self.driver.find_element_by_id('kw').send_keys('456789')
@@ -26,6 +25,10 @@ class StationGroup(unittest.TestCase):
         print(self.driver.title)
         print(self.driver.current_url)
         print(self.driver.capabilities['version'])
+        txt = 'E:/test.txt'
+        a = open(txt, 'a', encoding = 'utf-8')
+        a.write(self.driver.title)
+        a.close()
 
 
 if __name__ == '__main__':
