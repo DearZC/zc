@@ -41,12 +41,12 @@ text.insert(1.0, '仅用于自动化脚本操作，如有问题，联系开发�
 text.config(state=DISABLED)
 text.pack(side=BOTTOM)
 
-# 单行文本框输入
+# 单行文本框输入,点击按钮显示对应内容
 entry = StringVar()
 text_input = Entry(test, textvariable=entry)
 
 
-# 小游戏
+# 文字小游戏
 def test_game():
     t = entry.get()
     if t == '':
@@ -66,7 +66,11 @@ test_list = Frame(test)
 test_list.pack(pady=10)
 scrl_y = Scrollbar(test_list)
 scrl_y.pack(side=RIGHT, fill=Y)
-lb = Listbox(test_list, height=5, yscrollcommand=scrl_y.set)
+scrl_x = Scrollbar(test_list, orient=HORIZONTAL)
+scrl_x.pack(side=BOTTOM, fill=X)
+lb = Listbox(test_list, height=10, yscrollcommand=scrl_y.set, xscrollcommand=scrl_x.set)
+scrl_y['command'] = lb.yview
+scrl_x['command'] = lb.xview
 lb.pack()
 
 test.mainloop()
