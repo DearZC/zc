@@ -28,6 +28,5 @@ if __name__ == '__main__':
 #     test_run.run(test_suite)
     suite = unittest.TestSuite()
     suite.addTest(login('test_005'))
-    
     run = unittest.TextTestRunner()
     run.run(suite)
